@@ -1,0 +1,71 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  html{
+    font-size: clamp(0.875rem, 1.2vw + 0.5rem, 1rem);
+  }
+
+  * {
+    @apply box-border m-0 p-0 text-left transition-all duration-200 ease-in-out;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #888 transparent; /* Firefox */
+  }
+
+  main{
+    @apply bg-primary dark:bg-thirdy flex justify-center items-center h-screen w-screen;
+  }
+
+  article{
+    @apply bg-white dark:bg-secondary dark:text-white h-auto p-5 rounded-2xl shadow-[10px_5px_5px_#000] border-solid border-black border w-72 flex flex-col gap-5 animate-fade-in-up
+  }
+
+  #fig-art{
+    @apply overflow-hidden w-full h-32 flex items-center bg-primary rounded-md dark:bg-thirdy
+  }
+
+  #fig-art img{
+    @apply overflow-hidden w-full object-cover h-96 object-top
+  }
+
+  h1{
+    @apply font-bold  text-lg;
+  }
+
+  p{
+    @apply text-sm break-words
+  }
+  figcaption{
+    @apply font-bold text-sm
+  }
+
+  button{
+    @apply bg-primary dark:bg-white dark:text-black h-min p-2 text-sm font-bold rounded-lg transition-all duration-200 hover:bg-secondary hover:text-white;
+  }
+
+  div{
+    @apply flex flex-col items-start justify-start gap-2
+  }
+
+  #blog-comment{
+    @apply flex items-center gap-2
+  }
+  
+  #blog-comment img{
+    @apply w-10 h-10 rounded-full
+  }
+  
+  
+ 
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
